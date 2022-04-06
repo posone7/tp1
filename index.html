@@ -1,0 +1,307 @@
+<html style="height:100%;">
+<head>
+	<title>자막</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<script src="jquery-2.2.4.min.js"></script>
+	<script type="text/javascript">
+function r_c(){
+		//var __a = $("#sc1").val();
+		////////////////////////////////////////////////////////
+		//try {
+			//var myRegexp = /#<#!\[CDATA\[.*?\]\]\>/g;
+			//var myRegexp = /\[.*?\]\]/g;
+			//var myRegexp = /\[.*?\]/g;
+
+			/*
+			var myRegexp = /\[CDATA\[.*?\]\]/g;
+			//				<![CDATA[
+			
+			var match = myRegexp.exec(__a);
+			//console.log("aa");
+			while (match != null) {
+			  // matched text: match[0]
+			  // match start: match.index
+			  // capturing group n: match[n]
+			  console.log(match[0] +"<-------");
+
+				//__c = match[0].replace('[', '').replace(']', '');
+
+				//q_ans[(i+1)].push(__c);
+				//__b =__c.length;
+
+				//__a = __a.replace(match[0], '<span class="q_txt_c"><span class="correct"></span><span class="incorrect"></span><input type="text" class="q_txt" style="width:'+(__b*14)+'px;"></span>');
+
+				//console.log(match)
+
+			  match = myRegexp.exec(__a);
+			}
+			*/
+			/*
+			$(".hh").html(__a);
+			$(".hh").find("caption").each(function(i){
+				console.log($(this).val());
+			});
+			*/
+
+
+		//} catch(e) {
+		//	$("#sc2").val("ERROR");
+		//}
+		////////////////////////////////////////////////////////
+
+
+	$("#sc2").val("");
+	$("#sc3").val("");
+	var a = $("#sc1").val();
+	var b = a.replace(/\[.*?\]/g, "");
+
+	//var b = a.replace(/\[\#.*?\]/g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(//g, "");
+	//var b = a.replace(/\[\#.*?\]/g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(//g, "");
+	var b = a.replace(/,,/g, ",").replace(/․/g, "ㆍ").replace(/ \./g, ".").replace(/&/g, "&amp;").replace(/&amp;amp;/g, "&amp;").replace(/&amp;lt;/g, "&lt;").replace(/&amp;gt;/g, "&gt;").replace(/\[ \#/g, "[#").replace(/\[\#.*?\]/g, " ").replace(/ ,/g, ",").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(//g, "").replace(/\? ,/g, "?,").replace(/ \?/g, "?");
+
+
+	//b = b.replace(/\s*[,]s*/g, ", ").replace(/\s*[.]s*/g, ". ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ");
+
+	//b = b.replace(/\s*[,]s*/g, ", ").replace(/\s*[.]s*/g, ". ").replace(/\s[?]s*/g, "? ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/\s[? >]s*/g, "?>");
+
+	//b = b.replace(/\s*[,]s*/g, ", ").replace(/\s*[.]s*/g, ". ").replace(/\s*[?]s*/g, "? ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/\s[? >]s*/g, ">").replace(/\<\? xml/g, "<?xml");
+
+	//b = b.replace(/\s*[,]s*/g, ", ").replace(/\s*[.]s*/g, ". ").replace(/\s*[?]s*/g, "? ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/\? \>/g, "?>").replace(/\<\? xml/g, "<?xml");
+
+
+	//////////////////////////////////////////////////////////////////////
+	//기본적으로 이걸 끄는게 정상적인 형태.. / 컴마 다음에 단어 있을경우 처리하는게 추가된건데  ,"  산업안전 영문과정 이럴경우가 있어 문제가 돼 끔....
+	//##//b = b.replace(/\s*[,]s*/g, ", ").replace(/\s*[?]s*/g, "? ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/\? \>/g, "?>").replace(/\<\? xml/g, "<?xml");
+	//////////////////////////////////////////////////////////////////////	
+
+
+	//b = b.replace(/\?(s*[.]\s*)|(s*[.]\s*)/g, ". ").replace(/.  /g, ". ").replace(/\?(s*[,]\s*)|(s*[,]\s*)/g, ", ").replace(/,  /g, ", ");
+
+	//b = b.replace(/\?(s*[. ]\s*)|(s*[.])/g, ". ").replace(/.  /g, ". ").replace(/\?(s*[, ]\s*)|(s*[,])/g, ", ").replace(/,  /g, ", ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ");
+
+		/*
+		try {
+			//var myRegexp = /#<#!\[CDATA\[.*?\]\]\>/g;
+			//var myRegexp = /\[.*?\]\]/g;
+			//var myRegexp = /\[.*?\]/g;
+
+			var __a = b;
+			
+			var myRegexp = /\?(s*[,]\s*)|(s*[,]\s*)/g;
+			var match = myRegexp.exec(__a);
+			while (match != null) {
+			  // matched text: match[0]
+			  // match start: match.index
+			  // capturing group n: match[n]
+			  if (match[0] == ',')
+			  {
+				  console.log(match[0] +"<-------");
+
+			  }
+			  //$("#sc3").val($("#sc3").val()+match[0] + "\t");
+
+				//var __c = match[0].replace(',', ', ');
+				//b = b.replace(match[0], __c);
+
+				//q_ans[(i+1)].push(__c);
+				//__b =__c.length;
+
+				//__a = __a.replace(match[0], '<span class="q_txt_c"><span class="correct"></span><span class="incorrect"></span><input type="text" class="q_txt" style="width:'+(__b*14)+'px;"></span>');
+
+				//console.log(match)
+
+			  match = myRegexp.exec(__a);
+			}
+
+
+		} catch(e) {
+			
+		}
+		*/
+
+
+	$("#sc2").val(b);
+	//window.clipboardData.setData(b);
+
+
+
+		
+		////////////////////////////////////////////////////////
+		try {
+			//var myRegexp = /#<#!\[CDATA\[.*?\]\]\>/g;
+			//var myRegexp = /\[.*?\]\]/g;
+			//var myRegexp = /\[.*?\]/g;
+
+			var __X1 = "";
+			var __a = $("#sc2").val();
+
+			var myRegexp = /\[.*?\]/g;
+			var match = myRegexp.exec(__a);
+			//console.log("aa");
+			while (match != null) {
+			  // matched text: match[0]
+			  // match start: match.index
+			  // capturing group n: match[n]
+			  //console.log(match[0] +"<-------");
+			  $("#sc3").val($("#sc3").val()+match[0] + "\n\n\n");
+			  __X1 += match[0] + "\n\n\n";
+
+				//__c = match[0].replace('[', '').replace(']', '');
+
+				//q_ans[(i+1)].push(__c);
+				//__b =__c.length;
+
+				//__a = __a.replace(match[0], '<span class="q_txt_c"><span class="correct"></span><span class="incorrect"></span><input type="text" class="q_txt" style="width:'+(__b*14)+'px;"></span>');
+
+				//console.log(match)
+
+			  match = myRegexp.exec(__a);
+			}
+
+			if (__X1 != "")
+			{
+				alert("주의 [ ]  키워드 검출됨");
+			}
+
+		} catch(e) {
+			
+		}
+
+
+		try {
+			//var myRegexp = /#<#!\[CDATA\[.*?\]\]\>/g;
+			//var myRegexp = /\[.*?\]\]/g;
+			//var myRegexp = /\[.*?\]/g;
+
+			__X1 = "";
+			var __a = $("#sc2").val();
+
+			var myRegexp = /\.\./g;
+			var match = myRegexp.exec(__a);
+			//console.log("aa");
+			while (match != null) {
+			  // matched text: match[0]
+			  // match start: match.index
+			  // capturing group n: match[n]
+			  //console.log(match[0] +"<-------");
+			  $("#sc3").val($("#sc3").val()+match[0] + "\n\n\n");
+			  __X1 += match[0] + "\n\n\n";
+
+				//__c = match[0].replace('[', '').replace(']', '');
+
+				//q_ans[(i+1)].push(__c);
+				//__b =__c.length;
+
+				//__a = __a.replace(match[0], '<span class="q_txt_c"><span class="correct"></span><span class="incorrect"></span><input type="text" class="q_txt" style="width:'+(__b*14)+'px;"></span>');
+
+				//console.log(match)
+
+			  match = myRegexp.exec(__a);
+			}
+
+			if (__X1 != "")
+			{
+				alert("주의 ..  키워드 검출됨");
+			}
+
+		} catch(e) {
+			
+		}
+
+
+		try {
+			__X1 = "";
+			var __a = $("#sc2").val();
+
+			var myRegexp = /\.\,/g;
+			var match = myRegexp.exec(__a);
+			while (match != null) {
+			  $("#sc3").val($("#sc3").val()+match[0] + "\n\n\n");
+			  __X1 += match[0] + "\n\n\n";
+
+			  match = myRegexp.exec(__a);
+			}
+
+			if (__X1 != "")
+			{
+				alert("주의 .,  키워드 검출됨");
+			}
+
+		} catch(e) {
+		}
+
+		try {
+			__X1 = "";
+			var __a = $("#sc2").val();
+
+			var myRegexp = /\,\./g;
+			var match = myRegexp.exec(__a);
+			while (match != null) {
+			  $("#sc3").val($("#sc3").val()+match[0] + "\n\n\n");
+			  __X1 += match[0] + "\n\n\n";
+
+			  match = myRegexp.exec(__a);
+			}
+
+			if (__X1 != "")
+			{
+				alert("주의 ,.  키워드 검출됨");
+			}
+
+		} catch(e) {
+		}
+
+
+		////////////////////////////////////////////////////////
+
+
+
+
+
+	//console.log(a);
+}
+function r_set(){
+	$("#sc1").val("");
+	$("#sc2").val("");
+}
+	</script>
+
+<style>
+.sc1, .sc2 {
+	width: 100%;
+	height: 40%;
+}
+.sc3 {
+	width: 100%;
+	height: 13%;
+	margin-top: 2%;
+    color: red;
+}
+.bt1 {
+	text-align: center;
+	width: 100%;
+}
+.hh {
+	
+}
+</style>
+</head>
+<body style="margin:0; padding:0; overflow:hidden;">
+
+<textarea id="sc1" class="sc1">aaa bbb ccc.aaa b c, d,e,f.일 이삼 사.오오 육 칠, 팔,구,십. 십일 십이.
+일  이 삼   오 육</textarea>
+<br>
+<div class="bt1"><button id="bt1" onClick="r_set();">초기화</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="bt1" onClick="r_c();" style="width: 100px;">변환</button></div>
+<textarea id="sc2" class="sc2"></textarea>
+<br>
+<textarea id="sc3" class="sc3"></textarea>
+
+
+
+<!-- div class="hh"></div -->
+</body></html>
